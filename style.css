@@ -1,0 +1,202 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #0f0c1b;
+    color: #ffffff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(21, 17, 39, 0.95);
+    border-bottom: 2px solid #8a2be2;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo { font-size: 28px; font-weight: bold; }
+.logo span { color: #ff007f; text-shadow: 0 0 10px #ff007f; }
+.nav a { color: #c0c0c0; text-decoration: none; margin: 0 15px; }
+.nav a.active { color: #ff007f; }
+
+/* Кнопка Кошика в шапці */
+.btn-cart {
+    background: linear-gradient(45deg, #8a2be2, #ff007f);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+    transition: 0.3s;
+}
+
+.btn-cart:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
+}
+
+/* Вікно кошика (Модалка справа) */
+.cart-modal {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Спочатку схований за екраном */
+    width: 380px;
+    height: 100%;
+    background: #151127;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+    z-index: 1000;
+    transition: 0.4s ease;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #8a2be2;
+}
+
+/* Клас, який додаватиметься через JS для відкриття кошика */
+.cart-modal.open {
+    right: 0;
+}
+
+.close-cart {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff007f;
+}
+
+.cart-content h2 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #2d2554;
+    padding-bottom: 10px;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+/* Елемент товару в кошику */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a162e;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #2d2554;
+}
+
+.cart-item-info h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.cart-item-info span {
+    color: #ff007f;
+    font-weight: bold;
+}
+
+.btn-remove {
+    background: transparent;
+    border: none;
+    color: #ff4747;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-remove:hover {
+    text-decoration: underline;
+}
+
+.empty-message {
+    text-align: center;
+    color: #666;
+    margin-top: 40px;
+}
+
+.cart-footer {
+    border-top: 1px solid #2d2554;
+    padding-top: 20px;
+}
+
+.total-price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-price span {
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+}
+
+.btn-checkout {
+    width: 100%;
+    background: #00ffcc;
+    color: #151127;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-checkout:hover {
+    background: #00ccaa;
+    box-shadow: 0 0 15px #00ffcc;
+}
+
+/* Картки ігор (Оновлено під магазин) */
+.hero { height: 40vh; background: linear-gradient(rgba(0,0,0,0.7), #0f0c1b), url('https://picsum.photos/1920/1080?blur=5') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
+.container { padding: 40px 8%; }
+.section-title { font-size: 32px; margin-bottom: 40px; border-left: 5px solid #ff007f; padding-left: 15px; }
+.games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+.game-card { background: #1a162e; border-radius: 10px; overflow: hidden; transition: 0.3s; border: 1px solid #2d2554; }
+.game-card:hover { transform: translateY(-5px); border-color: #ff007f; }
+.game-img { height: 150px; background-size: cover; background-position: center; }
+.game-info { padding: 15px; text-align: center; }
+.game-info h3 { font-size: 18px; margin-bottom: 8px; }
+
+.price {
+    color: #00ffcc;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.btn-add-to-cart {
+    width: 100%;
+    background: #251f47;
+    border: 1px solid #8a2be2;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-add-to-cart:hover {
+    background: #8a2be2;
+}
+
+.footer { text-align: center; padding: 20px; color: #444; font-size: 14px; margin-top: 40px; }
