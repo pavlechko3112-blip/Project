@@ -1,0 +1,93 @@
+
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone | Крамниця Ігор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">Game<span>Zone</span></div>
+        <nav class="nav">
+            <a href="#" class="active">Головна</a>
+            <a href="#games">Магазин</a>
+        </nav>
+        
+        <button class="btn-cart" id="cartBtn">
+            🛒 Кошик (<span id="cartCount">0</span>)
+        </button>
+    </header>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <span class="close-cart" id="closeCart">&times;</span>
+            <h2>Твій Кошик</h2>
+            <div class="cart-items" id="cartItems">
+                <p class="empty-message">Кошик порожній</p>
+            </div>
+            <div class="cart-footer">
+                <div class="total-price">Разом: <span id="totalPrice">0</span> грн</div>
+                <button class="btn-checkout" id="checkoutBtn">Оформити замовлення</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Твій ігровий всесвіт</h1>
+            <p>Купуй найкращі хіти за вигідними цінами та збирай власну колекцію!</p>
+            <a href="#games" class="btn-main">До покупок</a>
+        </div>
+    </section>
+
+    <main class="container" id="games">
+        <h2 class="section-title">Каталог ігор</h2>
+        
+        <div class="games-grid">
+            <div class="game-card" data-id="1">
+                <div class="game-img" style="background-image: url('https://fogplay.mts.ru/image/6e/01/6e015603aca08c7c8d1eedfe0e42e0af.png');"></div>
+                <div class="game-info">
+                    <h3>Кіберперегони 2026</h3>
+                    <p class="price">450 грн</p>
+                    <button class="btn-add-to-cart" data-name="Кіберперегони 2026" data-price="450">В кошик</button>
+                </div>
+            </div>
+
+            <div class="game-card" data-id="2">
+                <div class="game-img" style="background-image: url('https://www.deepsilver.com/media/ovhokrxn/metro2039-keyart.jpg?width=2560&v=1dcd71666fdbe70');"></div>
+                <div class="game-info">
+                    <h3>Загублений Світ</h3>
+                    <p class="price">320 грн</p>
+                    <button class="btn-add-to-cart" data-name="Загублений Світ" data-price="320">В кошик</button>
+                </div>
+            </div>
+
+            <div class="game-card" data-id="3">
+                <div class="game-img" style="background-image: url('https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3206090/f20b63bd19113683b52e24a36eb06abbfd23c747/capsule_616x353.jpg?t=1739159106');"></div>
+                <div class="game-info">
+                    <h3>Арена Титанів</h3>
+                    <p class="price">600 грн</p>
+                    <button class="btn-add-to-cart" data-name="Арена Титанів" data-price="600">В кошик</button>
+                </div>
+            </div>
+
+            <div class="game-card" data-id="4">
+                <div class="game-img" style="background-image: url('https://image.tmdb.org/t/p/original/umAoDwLZMBrYeCDfbJYFRMuXWAr.jpg');"></div>
+                <div class="game-info">
+                    <h3>Космічний Рубіж</h3>
+                    <p class="price">280 грн</p>
+                    <button class="btn-add-to-cart" data-name="Космічний Рубіж" data-price="280">В кошик</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 GameZone. Всі права захищені.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
